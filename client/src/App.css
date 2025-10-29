@@ -1,0 +1,43 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.App nav {
+  background-color: #1e88e5;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.App nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.App nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 2em;
+  max-width: 900px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input, select, button {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

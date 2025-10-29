@@ -1,0 +1,167 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  margin: 20px;
+  animation: slideIn 0.3s ease-out;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+  position: relative;
+}
+
+.modal-icon {
+  font-size: 24px;
+  margin-left: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.modal-success .modal-icon {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.modal-error .modal-icon {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.modal-warning .modal-icon {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.modal-info .modal-icon {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.modal-title {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.modal-body {
+  padding: 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.modal-body p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.modal-footer {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  min-width: 80px;
+}
+
+.modal-success .modal-button {
+  background-color: #28a745;
+}
+
+.modal-error .modal-button {
+  background-color: #dc3545;
+}
+
+.modal-warning .modal-button {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.modal-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.modal-button:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

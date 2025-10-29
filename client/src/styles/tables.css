@@ -1,0 +1,326 @@
+/* עיצוב טבלאות מודרני ורספונסיבי */
+
+.table-container {
+  background: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid var(--border-light);
+}
+
+.table-header {
+  background: var(--primary-color);
+  color: var(--text-white);
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--primary-hover);
+}
+
+.table-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.table-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-md);
+  direction: rtl;
+}
+
+.data-table th {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: center;
+  border-bottom: 2px solid var(--border-medium);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-table td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+.data-table tbody tr {
+  position: relative;
+}
+
+.data-table tbody tr:hover {
+  background: var(--primary-light);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.data-table tbody tr:nth-child(even):hover {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f0f9ff 100%);
+}
+
+/* עמודות מיוחדות */
+.table-id {
+  font-weight: 600;
+  color: var(--primary-color);
+  background: var(--primary-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: inline-block;
+  min-width: 40px;
+}
+
+.table-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.table-date {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.table-phone {
+  font-family: 'Courier New', monospace;
+  color: var(--text-secondary);
+  direction: ltr;
+}
+
+/* כפתורי פעולה בטבלה */
+.table-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  justify-content: center;
+  align-items: center;
+}
+
+.table-btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 70px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-btn-success {
+  background: var(--success-color);
+  color: var(--text-white);
+}
+
+.table-btn-success:hover {
+  background: var(--primary-hover);
+}
+
+.table-btn-disabled {
+  background: var(--border-medium);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* הודעת טבלה ריקה */
+.table-empty {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--text-muted);
+  font-style: italic;
+  background: var(--bg-secondary);
+}
+
+.table-empty-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+  display: block;
+  opacity: 0.5;
+}
+
+.table-empty-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.table-empty-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* רספונסיביות לטבלאות */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    margin: 0 -var(--spacing-sm);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .data-table {
+    font-size: var(--font-size-sm);
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-sm);
+    white-space: nowrap;
+  }
+  
+  .table-actions {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .table-btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* טבלה כרטיסיות במובייל */
+  .data-table,
+  .data-table thead,
+  .data-table tbody,
+  .data-table th,
+  .data-table td,
+  .data-table tr {
+    display: block;
+  }
+  
+  .data-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .data-table tr {
+    border: 1px solid var(--border-light);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .data-table td {
+    border: none;
+    position: relative;
+    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 40%;
+    text-align: right;
+    white-space: normal;
+  }
+  
+  .data-table td:before {
+    content: attr(data-label) ":";
+    position: absolute;
+    left: var(--spacing-sm);
+    width: 35%;
+    padding-right: var(--spacing-sm);
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: left;
+  }
+}
+
+/* אנימציות טבלה */
+@keyframes tableRowSlide {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.data-table tbody tr {
+  animation: tableRowSlide 0.3s ease-out;
+}
+
+/* פילטר וחיפוש */
+.table-filters {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* סורטינג */
+.sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.sortable:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sortable::after {
+  content: '↕';
+  margin-right: var(--spacing-xs);
+  opacity: 0.5;
+  font-size: var(--font-size-xs);
+}
+
+.sortable.asc::after {
+  content: '↑';
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+.sortable.desc::after {
+  content: '↓';
+  opacity: 1;
+  color: var(--primary-color);
+}
