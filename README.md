@@ -158,4 +158,4 @@ This project was developed **for educational purposes** and as a demonstration o
 
 ---
 
-⭐ If you like this project, consider giving it a star on GitHub!
+SHO
